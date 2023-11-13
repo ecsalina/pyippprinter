@@ -1,14 +1,17 @@
-import requests
 from dataclasses import dataclass
-
-#requests.post()
-
-
-
+import sockets
 
 class Printer:
-    def __init__(self):
-        pass
+    def __init__(self: Printer, port: int = 631):
+        self.port = port
+        return
+
+    def listen(port : int = self.port):
+        server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        server_sock.bind(("localhost", port))
+        server_sock.listen(1)
+        client_sock, address = server_sock.accept()
+
 
     def receive_request(self: Printer, request: Request) -> None:
 #        match request.operation:
@@ -28,6 +31,7 @@ class Printer:
 #                self.cancel_job(request)
         print(request) #DEBUG
         return
+
 
 @dataclass
 class Request:
