@@ -1,4 +1,4 @@
-/ipp_server/data
+/ipp_server/ipp_server/__pycache__
 /ipp_server/ipp_site/__pycache__
-/ipp_server/ipp_queue/__pycache__
 /ipp_server/ipp_printers/__pycache__
+/ipp_server/data
