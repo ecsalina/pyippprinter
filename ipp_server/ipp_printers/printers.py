@@ -18,7 +18,7 @@ class Response:
 
 
 @dataclass
-class Request:
+class IppRequest:
     version : str
     operation: str
     request_id: int
@@ -43,7 +43,7 @@ class Printer:
     def __init__(self):
         return
 
-    def receive_request(self, request: Request) -> None:
+    def receive_request(self, request: IppRequest) -> None:
 #        match request.operation:
 #            case "Create-Job":
 #                self.create_job(request)
