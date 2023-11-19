@@ -11,4 +11,5 @@ def receive_request(request: HttpRequest):
 #    else:
 #        return(HttpResponse(status=200))
     ipp_request = printers.IppRequest(request.body)
+    print(str(ipp_request)) #DEBUG
     return(HttpResponse(status=200))
