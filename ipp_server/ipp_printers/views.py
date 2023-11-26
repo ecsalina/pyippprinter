@@ -10,6 +10,11 @@ def receive_request(request: HttpRequest):
 #        return(HttpResponse(status=500))
 #    else:
 #        return(HttpResponse(status=200))
+    print(request.META) #DEBUG
     ipp_request = printers.IppRequest(request.body)
-    print(str(ipp_request)) #DEBUG
+    print(ipp_request)
+    print("data: ")
+    print(ipp_request.data)
+    printer = printers.Printer()
+    printer.receive_request(ipp_request)
     return(HttpResponse(status=200))
